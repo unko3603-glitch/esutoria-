@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エストリア叙事詩</title>
+    <meta name="description" content="エストリア叙事詩の限定動画ポータルサイト">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- パスワード確認画面 -->
+    <section id="login-section" class="view-section active">
+        <div class="glass-panel login-panel">
+            <h1 class="site-title">エストリア叙事詩</h1>
+            <p class="subtitle">封印されし記録への鍵を</p>
+            <form id="login-form">
+                <input type="password" id="password-input" placeholder="合言葉を入力" required>
+                <button type="submit" class="gold-btn">扉を開く</button>
+            </form>
+            <p id="error-msg" class="error-msg hidden">合言葉が違います</p>
+        </div>
+    </section>
+
+    <!-- ホーム画面 -->
+    <section id="home-section" class="view-section hidden">
+        <header>
+            <h1 class="header-title">エストリア叙事詩</h1>
+            <button id="logout-btn" class="text-btn">退出</button>
+        </header>
+        <div class="home-content">
+            <div class="hero-image">
+                <div class="gold-glow"></div>
+                <h2>壮大なる叙事詩が<br>今、明かされる</h2>
+            </div>
+            <button id="to-categories-btn" class="gold-btn large-btn">物語の記録を開く</button>
+            
+            <div style="display: flex; gap: 15px; margin-top: 25px; flex-wrap: wrap; justify-content: center;">
+                <button id="to-characters-btn" class="gold-btn">登場人物の記録</button>
+                <button id="to-glossary-btn" class="gold-btn">世界の記録（固有名詞）</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 分類（カテゴリ）選択画面 -->
+    <section id="category-section" class="view-section hidden">
+        <header>
+            <button id="back-to-home-btn" class="text-btn">&lt; ホームに戻る</button>
+            <h1 class="header-title">分類選択</h1>
+        </header>
+        <div class="home-content">
+            <p class="subtitle" style="margin-bottom: 2rem;">視聴する記録の分類を選択してください</p>
+            <button id="category-prologue-btn" class="gold-btn large-btn category-card">序章<br><span style="font-size: 0.8rem; opacity: 0.8; font-weight: normal;">第1話 〜 最終話</span></button>
+            <!-- 今後分類が増える場合はここに追加 -->
+        </div>
+    </section>
+
+    <!-- 動画選択・視聴画面 -->
+    <section id="video-section" class="view-section hidden">
+        <header>
+            <button id="back-to-categories-btn" class="text-btn">&lt; 戻る</button>
+            <h1 class="header-title">序章</h1>
+        </header>
+        
+        <div class="video-list">
+            
+            <div class="video-card">
+                <h3 class="video-title">第1話</h3>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/tgiNoEjI7IA?si=b3_uigLo78-HkMjq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <h3 class="video-title">第2話</h3>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/gyDkWqbOcS4?si=CKTp8Zl4d-vUZ5Ov" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <h3 class="video-title">第3話</h3>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/kCzEAbw_SOA?si=ZLF_PoY-FZ9Iq0Yy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <h3 class="video-title">第4話</h3>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/qXtfHJ5UkKY?si=m3tAV1pbdTxQWd4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <h3 class="video-title">第5話</h3>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/9nV4tf6Nvyo?si=xUgorgQKXJ9RvRbS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-card final-episode">
+                <h3 class="video-title gold-text">最終話</h3>
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/9heJxHEvnn0?si=4KER6jCctIZT0Z4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 登場人物説明画面 -->
+    <section id="character-section" class="view-section hidden">
+        <header>
+            <button id="back-to-home-from-char-btn" class="text-btn">&lt; ホームに戻る</button>
+            <h1 class="header-title">登場人物の記録</h1>
+        </header>
+        <div class="content-scroll-area">
+            <div class="narrator-box">
+                「あ、あのっ……ご、ごめんなさい……私なんかが説明して、ちゃんと伝わるかわからないんですけど……えっと、一生懸命がんばります……っ。」
+            </div>
+            
+            <div class="info-card char-card">
+                <div class="char-img-container"><img src="images/orpheus.png" alt="オルフェス"></div>
+                <div class="char-details">
+                    <h3 class="info-title">オルフェスさん</h3>
+                    <p>えっと、元々は宇宙空間で運び屋をしてたんですけど、乗っていた宇宙船がエストリア連邦に墜落しちゃって……瀕死だったところを黄泉の賢者様と取引して、新しい体をもらった人です……。<br>でも、そのせいで自分の名前以外の記憶を全部なくしちゃってて……。<br>最初は戦い方もわからなかったんですけど、汚染域の物質やネザリングを浄化したり吸収したりできる、未知の「虚無元素」っていう力に目覚めました……。<br>武器は、壊れたバットを虚無元素で包んで作り変えた、紫の稲妻が走る黒曜石みたいな漆黒のバットを使ってて……その、かっこいい、です……。</p>
+                </div>
+            </div>
+
+            <div class="info-card char-card">
+                <div class="char-img-container"><img src="images/charlotte.png" alt="シャルロッテ"></div>
+                <div class="char-details">
+                    <h3 class="info-title">シャルロッテさん</h3>
+                    <p>オルフェスさんと同年代くらいの、短い白髪がきれいな女の子、です……。<br>風元素と「技の極意」を使って、風の刃や竜巻を起こしながら剣で戦う、すごく強くて冷静な人です……。<br>あんまり喋らないクールな感じなんですけど、ピザがだぁい好きみたいで……自己紹介でも好きな食べ物はピザって言ってて、ご飯の時も黙々とピザを食べてました……。<br>小さい頃は孤児だったんですけど、エヴァリンさんに引き取られて邪気餓鬼のメンバーになったそうです……。</p>
+                </div>
+            </div>
+
+            <div class="info-card char-card">
+                <div class="char-img-container"><img src="images/nana.png" alt="ナナ"></div>
+                <div class="char-details">
+                    <h3 class="info-title">ナナさん</h3>
+                    <p>冒険者チーム「邪気餓鬼」のリーダーをしてる女の子、です……。<br>三度の飯より冒険が好きな美少女だって自分で言ってて……私とは正反対で、すごくキラキラしてて元気な人です……。<br>シャルロッテさんと同じで孤児だった過去があるんですけど、今はそんなこと感じさせないくらい明るくて……。<br>戦闘では、炎元素と「速の極意」を使って、すごく速く動きながらサブマシンガンを撃って戦います……。</p>
+                </div>
+            </div>
+
+            <div class="info-card char-card">
+                <div class="char-img-container"><img src="images/kong.png" alt="コング"></div>
+                <div class="char-details">
+                    <h3 class="info-title">コングさん</h3>
+                    <p>体が大きくて、雷元素と「力の極意」を拳にまとわせて豪快に戦う男の人です……。<br>でも、強そうな見た目に反して「対汚染域特戦隊」っていうヒーローの特撮番組や漫画が大好きで……。<br>お部屋にフィギュアを飾ったり、DVDを揃えたりしてて……あ、そういう推し活するところは、少し親近感が湧きます……っ。<br>オルフェスさんにたくさんご飯を食べさせようとする、親戚のおじさんみたいな面倒見のいいところもあります……。</p>
+                </div>
+            </div>
+
+            <div class="info-card char-card">
+                <div class="char-img-container"><img src="images/evelyn.png" alt="エヴァリン"></div>
+                <div class="char-details">
+                    <h3 class="info-title">エヴァリンさん</h3>
+                    <p>えっと、汚染域研究所にいる女の人で……。<br>お掃除はちょっと苦手みたいで、床に研究資料を散らかして慌ててたりもするんですけど……。<br>孤児だったナナさんやシャルロッテさんを育ててくれて、記憶のないオルフェスさんにも優しく居場所をくれる、本当のお母さんみたいな人です……。<br>それから、「速の賢者」のエリシアさんとも昔からの知り合いで……すごく人脈が広い、すごい人なんです……。</p>
+                </div>
+            </div>
+
+            <div class="narrator-box">
+                「あ、あの……こんな感じで、大丈夫、でしたか……？」
+            </div>
+        </div>
+    </section>
+
+    <!-- 固有名詞説明画面 -->
+    <section id="glossary-section" class="view-section hidden">
+        <header>
+            <button id="back-to-home-from-glos-btn" class="text-btn">&lt; ホームに戻る</button>
+            <h1 class="header-title">世界の記録（固有名詞）</h1>
+        </header>
+        <div class="content-scroll-area">
+
+            <h2 class="glossary-category">■主人公・国家</h2>
+            <div class="info-card">
+                <h3 class="info-title">オルフェス</h3>
+                <p>記憶を失いし宇宙の漂流者……。<br>だけどその身に宿すのは、世界の理を侵す“虚無”。<br>彼はまだ知らない、自分がこの世界の均衡を揺るがす存在だということを……。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">エストリア連邦</h3>
+                <p>六芒の刻印を大地に刻む閉ざされた国。<br>文明は栄えているのに、空の外を知らないなんて……皮肉よね。<br>ここは既に、“何か”に侵されているのだから。</p>
+            </div>
+
+            <h2 class="glossary-category">■都市・地理</h2>
+            <div class="info-card">
+                <h3 class="info-title">ヴァリアノ市</h3>
+                <p>光に満ちた都……でもその裏には、信仰という名の鎖がある。<br>誰も気づいていないの？ この街が“支配”されていることに。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">バルバドゥー市</h3>
+                <p>鉄と煙の街。<br>富と欲望が渦巻く場所には、必ず“歪み”が生まれる……。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ユンセー町</h3>
+                <p>美しい自然……だけど、伝統はゆっくりと蝕まれている。<br>そう、見えない“侵食”によってね。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ギルガイア町</h3>
+                <p>芸術……それは魂の叫び。<br>この街の作品には、きっと“何か”が映り込んでいるわ。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ノヴァスプリング</h3>
+                <p>新しい時代の象徴。<br>でも再生の裏には、必ず“忘れ去られた過去”があるのよ。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">霧隠自治区</h3>
+                <p>外界を拒絶した閉ざされた領域。<br>……そこにあるのは、守りか、それとも恐怖か。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">コルーゾ村</h3>
+                <p>静かな村……でもここには“逃げてきた者たちの歴史”がある。<br>平和って、簡単に壊れるものなのにね。</p>
+            </div>
+
+            <h2 class="glossary-category">■自然・重要地形</h2>
+            <div class="info-card">
+                <h3 class="info-title">エリア・4500</h3>
+                <p>天に最も近い場所。<br>その頂に刻まれた傷跡は、かつての戦いの証……。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">トリル川</h3>
+                <p>大地を切り裂く流れ。<br>これはただの川じゃない……“戦いの記憶”そのものよ。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ユグドラシル</h3>
+                <p>巨大すぎる“異物”。<br>あれはもう樹なんかじゃない……世界に突き刺さった“楔”よ。</p>
+            </div>
+
+            <h2 class="glossary-category">■組織・勢力</h2>
+            <div class="info-card">
+                <h3 class="info-title">ソルスティア教</h3>
+                <p>光を掲げる教え……でも光が強すぎると、影もまた濃くなるの。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ソルスティア騎士団</h3>
+                <p>正義を名乗る剣。<br>だけどその刃が、本当に守るべきものを守っているとは限らない。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ナハト</h3>
+                <p>闇を信仰する者たち。<br>でもね……もしかしたら、彼らの方が“真実”に近いのかもしれないわよ？</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ヘキサグラムカンパニー</h3>
+                <p>六芒の名を冠する巨大企業。<br>偶然だと思う？ ……私は思わない。</p>
+            </div>
+
+            <h2 class="glossary-category">■戦力・称号</h2>
+            <div class="info-card">
+                <h3 class="info-title">五賢者</h3>
+                <p>世界の均衡を保つ五つの力。<br>でも均衡って……壊れるためにあるのよ。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">エリシア</h3>
+                <p>風のように速き剣。<br>彼女の動きは、もはや“時間”すら置き去りにする。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">フェルド</h3>
+                <p>技を極めし者。<br>その手にかかれば、戦いすら“芸術”になる。</p>
+            </div>
+
+            <h2 class="glossary-category">■システム・能力</h2>
+            <div class="info-card">
+                <h3 class="info-title">革命者</h3>
+                <p>選ばれし者たち。<br>でもそれは祝福？ それとも呪い？</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">元素</h3>
+                <p>世界を構成する力。<br>触れた者はもう、普通ではいられない。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">極意</h3>
+                <p>人が到達できる“極限”。<br>だけど極めた先にあるのは……人であることの終わりかもしれない。</p>
+            </div>
+
+            <h2 class="glossary-category">■汚染関連</h2>
+            <div class="info-card">
+                <h3 class="info-title">汚染域</h3>
+                <p>侵食する闇。<br>そこに足を踏み入れた時点で、もう戻れないの。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">汚染樹</h3>
+                <p>すべての元凶。<br>あれは“生きている”……そして、増殖する。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ネザリング</h3>
+                <p>成れの果て。<br>命が歪められた姿……見ていると、胸がざわつくのよ。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ハートガーディアン</h3>
+                <p>核を守る番人。<br>倒すには、それ相応の“覚悟”が必要よ。</p>
+            </div>
+
+            <h2 class="glossary-category">■災害・強敵</h2>
+            <div class="info-card">
+                <h3 class="info-title">三大汚染災害</h3>
+                <p>世界が悲鳴を上げた三つの記録。<br>その爪痕は、今も消えていない。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ナイトメアクロウ</h3>
+                <p>最初にして最大の恐怖。<br>その一撃が、大地の形すら変えた。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ブラッディスカージ</h3>
+                <p>血に染まる暴力の化身。<br>あれは戦いじゃない……ただの“蹂躙”。</p>
+            </div>
+            <div class="info-card">
+                <h3 class="info-title">ヴォイドエンペラー</h3>
+                <p>闇そのもの。<br>あれを前にして、生きて帰れた者がいること自体が奇跡よ。</p>
+            </div>
+
+            <div class="narrator-box">
+                「……どう？<br>まだこの世界の“深淵”、覗いてみる？」
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JSファイルの読み込み -->
+    <script src="js/main.js"></script>
+</body>
+</html>

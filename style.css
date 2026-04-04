@@ -1,0 +1,389 @@
+/* ベース設定 */
+:root {
+    --bg-color: #050505;
+    --card-bg: rgba(20, 20, 20, 0.7);
+    --gold-main: #d4af37;
+    --gold-light: #f1c40f;
+    --gold-dark: #aa8529;
+    --text-main: #e0e0e0;
+    --text-muted: #888;
+    --font-serif: 'Noto Serif JP', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-serif);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* 背景の装飾 */
+    background-image: radial-gradient(circle at 50% 0%, rgba(50, 40, 10, 0.4) 0%, transparent 60%),
+                      radial-gradient(circle at 0% 100%, rgba(30, 25, 5, 0.5) 0%, transparent 50%),
+                      radial-gradient(circle at 100% 100%, rgba(40, 30, 10, 0.4) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* ビューセクションの切り替え */
+.view-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    min-height: 100vh;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.view-section.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* 共通コンポーネント */
+.glass-panel {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.site-title, .header-title {
+    font-size: 2rem;
+    color: var(--gold-main);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.gold-btn {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold-main));
+    color: #111;
+    border: none;
+    padding: 12px 24px;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.gold-btn:hover {
+    background: linear-gradient(135deg, var(--gold-main), var(--gold-light));
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+}
+
+.gold-btn:active {
+    transform: translateY(0);
+}
+
+.large-btn {
+    font-size: 1.2rem;
+    padding: 16px 32px;
+    margin-top: 20px;
+}
+
+.text-btn {
+    background: none;
+    border: none;
+    color: var(--gold-main);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+.text-btn:hover {
+    color: var(--gold-light);
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+/* ログイン画面 */
+#login-section {
+    justify-content: center;
+    align-items: center;
+}
+
+.login-panel {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-panel .subtitle {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#password-input {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--gold-dark);
+    color: var(--gold-main);
+    font-family: var(--font-serif);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#password-input:focus {
+    outline: none;
+    border-color: var(--gold-light);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+#password-input::placeholder {
+    color: rgba(212, 175, 55, 0.4);
+}
+
+.error-msg {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.error-msg.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ホーム画面 */
+#home-section header, #video-section header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    margin-bottom: 30px;
+}
+
+#home-section .header-title, #video-section .header-title {
+    margin-bottom: 0px;
+    font-size: 1.5rem;
+}
+
+.home-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-image {
+    position: relative;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.gold-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%);
+    z-index: -1;
+    animation: pulse 4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+}
+
+.hero-image h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* 動画選択画面 */
+.video-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.video-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.6);
+}
+
+.video-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+    border-left: 3px solid var(--gold-main);
+    padding-left: 10px;
+}
+
+.gold-text {
+    color: var(--gold-main);
+    border-left-color: var(--gold-light);
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 最終話 特別装飾 */
+.final-episode {
+    border: 1px solid var(--gold-main);
+    background: linear-gradient(180deg, rgba(20,20,20,0.8) 0%, rgba(50,40,10,0.4) 100%);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* メディアクエリ（タブレット等、より大きな画面への対応） */
+@media (min-width: 768px) {
+    .video-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .site-title, .header-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .video-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- 追加機能：説明・用語集画面のスタイル --- */
+.content-scroll-area {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.narrator-box {
+    background: rgba(212, 175, 55, 0.1);
+    border-left: 4px solid var(--gold-main);
+    padding: 20px;
+    margin: 20px 0 40px 0;
+    font-style: italic;
+    border-radius: 4px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    line-height: 1.8;
+}
+
+.info-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.info-title {
+    color: var(--gold-light);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 5px;
+}
+
+.glossary-category {
+    color: var(--gold-main);
+    font-size: 1.5rem;
+    margin: 40px 0 20px 0;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    text-align: center;
+}
+
+.char-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.char-img-container {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--gold-main);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+    background: #111;
+}
+
+.char-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.char-details {
+    flex-grow: 1;
+}
+
+@media (max-width: 600px) {
+    .char-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .char-img-container {
+        margin-bottom: 15px;
+        width: 140px;
+        height: 140px;
+    }
+}
